@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-sm table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tên</th>
+          <th scope="col">Tuổi</th>
+          <th scope="col">Địa chỉ</th>
+          <th scope="col">Sđt</th>
+          <th scope="col" colspan="2">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td>@mdo</td>
+          <td>@mdo</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm">
+              <i class="bi bi-pencil-square"></i> SỬA
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger btn-sm">
+              <i class="bi bi-trash"></i> XÓA
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #content let-modal> </ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+  Launch demo modal
+</button>
+
+<hr />
