@@ -19,12 +19,20 @@
           <td>@mdo</td>
           <td>@mdo</td>
           <td>
-            <button type="button" class="btn btn-primary btn-sm">
+            <button
+              type="button"
+              class="btn btn-primary btn-sm"
+              (click)="onClickOpenEditDialog()"
+            >
               <i class="bi bi-pencil-square"></i> SỬA
             </button>
           </td>
           <td>
-            <button type="button" class="btn btn-danger btn-sm">
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="onClickOpenDeleteDialog()"
+            >
               <i class="bi bi-trash"></i> XÓA
             </button>
           </td>
@@ -33,11 +41,3 @@
     </table>
   </div>
 </div>
-
-<ng-template #content let-modal> </ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-  Launch demo modal
-</button>
-
-<hr />

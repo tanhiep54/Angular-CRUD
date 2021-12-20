@@ -1,26 +1,24 @@
 <div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+  <h4 class="modal-title" id="modal-basic-title">{{ title }}</h4>
   <button
     type="button"
     class="close"
     aria-label="Close"
-    (click)="modal.dismiss()"
+    (click)="onClickCloseDialog()"
   >
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <form>
-    <div class="form-group">
-      <label for="dateOfBirth">Date of birth</label>
-      <div class="input-group">
-        <div class="input-group-append"></div>
-      </div>
-    </div>
-  </form>
+  <ng-content></ng-content>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="modal.close()">
-    Save
+  <button
+    *ngFor="let action of listAction"
+    type="button"
+    [attr.class]="'action.classBtn'"
+    (click)="onClickEmitAction(action)"
+  >
+    {{ action.textBtn }}
   </button>
 </div>

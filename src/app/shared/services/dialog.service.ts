@@ -24,9 +24,10 @@ export class DialogService {
     modalRef.componentInstance.title = title;
     return modalRef;
   }
-  public deleteDialog(title: string) {
+  public deleteDialog(title: string, textContent: string) {
     const modalRef = this.dialogCommon(DeleteDialogComponent);
     modalRef.componentInstance.title = title;
+    modalRef.componentInstance.textContent = textContent;
     return modalRef;
   }
 }

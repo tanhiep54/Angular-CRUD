@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DialogService } from 'src/app/shared/services/dialog.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { IListAction } from 'src/app/shared/ultils/layout.const';
 
 @Component({
   selector: 'app-dialog',
@@ -8,7 +7,23 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent implements OnInit {
-  constructor(private dialogService: DialogService) {}
+  constructor() {}
+  @Input()
+  public title: string = '';
+  @Input()
+  public listAction: IListAction[] = [];
+  @Output()
+  public _onClickCloseDialog: EventEmitter<any> = new EventEmitter();
+  public onClickCloseDialog() {
+    this._onClickCloseDialog.emit();
+  }
+  public onClickEmitAction(action: IListAction) {
+    console.log(action);
+
+    if (action.action) {
+      action.action();
+    }
+  }
 
   ngOnInit(): void {}
 }
